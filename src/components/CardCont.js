@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "./Card";
+import NewCard from "./NewCard";
+import styled from "styled-components";
 
 export default function CardCont() {
   const [astronomySubject, setAstronomySubject] = useState({});
@@ -19,15 +20,30 @@ export default function CardCont() {
       });
   }, []);
 
+  const NewContDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 150px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: white;
+  `;
+
+  const DropShadowDiv = styled.div`
+    filter: drop-shadow(-20px 10px 10px darkgrey);
+  `;
   return (
-    <div>
-      <Card
-        key={astronomySubject}
-        title={astronomySubject.title}
-        description={astronomySubject.explanation}
-        imgUrl={astronomySubject.url}
-        date={astronomySubject.date}
-      />
-    </div>
+    <DropShadowDiv>
+      <NewContDiv>
+        <NewCard
+          key={astronomySubject}
+          title={astronomySubject.title}
+          description={astronomySubject.explanation}
+          imgUrl={astronomySubject.url}
+          date={astronomySubject.date}
+        />
+      </NewContDiv>
+    </DropShadowDiv>
   );
 }
