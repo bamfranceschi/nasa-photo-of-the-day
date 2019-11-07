@@ -24,26 +24,26 @@ export default function CardCont() {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 50px 150px;
-    border: 1px solid grey;
+    margin: 7% 20%;
     border-radius: 10px;
     background-color: white;
   `;
 
-  const DropShadowDiv = styled.div`
-    filter: drop-shadow(-20px 10px 10px darkgrey);
-  `;
+  // const DropShadowDiv = styled.div`
+  //   filter: drop-shadow(-20px 10px 10px darkgrey);
+  // `;
+
   return (
-    <DropShadowDiv>
-      <NewContDiv>
-        <NewCard
-          key={astronomySubject}
-          title={astronomySubject.title}
-          description={astronomySubject.explanation}
-          imgUrl={astronomySubject.url}
-          date={astronomySubject.date}
-        />
-      </NewContDiv>
-    </DropShadowDiv>
+    // <DropShadowDiv>
+    <NewContDiv>
+      <NewCard
+        key={astronomySubject}
+        title={astronomySubject.title}
+        description={astronomySubject.explanation}
+        imgUrl={astronomySubject.url}
+        date={astronomySubject.date}
+      />
+    </NewContDiv>
+    // </DropShadowDiv>
   );
 }

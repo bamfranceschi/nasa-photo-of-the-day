@@ -8,16 +8,22 @@ const SubjDesc = styled.p`
 
 const SubjTitle = styled.h2`
   padding: 20px 35px 20px 35px;
+  color: darkblue;
 `;
 
 const DropShadowImg = styled.img`
   filter: drop-shadow(-20px 10px 10px darkgrey);
+  border-radius: 6px;
+`;
+
+const DateStyle = styled.h3`
+  color: darkblue;
 `;
 
 const NewCard = props => {
   return (
     <div>
-      <h3>For {props.date}</h3>
+      <DateStyle>For {props.date}</DateStyle>
       <DropShadowImg
         width="85%"
         src={props.imgUrl}
